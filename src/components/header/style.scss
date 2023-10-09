@@ -1,0 +1,78 @@
+@import url("https://fonts.googleapis.com/css2?family=Martel+Sans:wght@200;300;400;600;700;800;900&family=Maven+Pro:wght@400;500;600;700;800;900&display=swap");
+.header {
+  background-image: linear-gradient(to right, #241d1d65, #1311118e),
+    url(./../../../public/images/banner.jpg);
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
+  .content {
+    .content-top {
+      h1 {
+        text-align: center;
+        padding: 25px 0;
+        font-family: "Maven Pro", sans-serif;
+        span {
+          display: block;
+          color: white;
+          font-size: 30px;
+        }
+      }
+      border-bottom: 1px solid white;
+    }
+    .content-bottom {
+      text-align: center;
+      color: white;
+      padding-top: 10px;
+      .top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        h2 {
+          font-size: 25px;
+        }
+        .register,
+        .login {
+          color: white;
+          border: 1px solid white;
+          background-color: #13111100;
+          margin-left: 10px;
+          outline: none;
+        }
+      }
+      .bottom {
+        .left {
+          margin-top: 100px;
+          height: 400px;
+          .typing {
+            font-size: 120px;
+            width: min-content;
+            text-align: left;
+          }
+        }
+        .right {
+          position: relative;
+          a {
+            position: absolute;
+            bottom: 30px;
+            right: 10px;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s;
+            &:hover {
+              color: aqua;
+              i {
+                transition: all 0.3s;
+                transform: translateX(10px);
+              }
+            }
+            &:not(:hover) {
+              i {
+                transition: all 0.3s;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
