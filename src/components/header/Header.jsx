@@ -4,13 +4,13 @@ import "./style.scss";
 export default function Header() {
   const [currentText, setCurrentText] = useState("");
   const text = "WARDEL SUITES";
-  console.log(currentText);
+
   useEffect(() => {
     const type = () => {
       setCurrentText(text.substring(0, currentText.length + 1));
     };
     setTimeout(type, 100);
-  }, [currentText]); // Không có phụ thuộc
+  }, [currentText]);
 
   return (
     <div className="header">
@@ -38,8 +38,8 @@ export default function Header() {
                 </p>
               </div>
               <div className="right col-4">
-                <a href="">
-                  BOOK YOUR STAY <i class="las la-arrow-right"></i>
+                <a href="#">
+                  BOOK YOUR STAY <i className="las la-arrow-right" />
                 </a>
               </div>
             </div>
