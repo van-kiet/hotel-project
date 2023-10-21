@@ -8,8 +8,38 @@
   }
   .slider {
     text-align: center;
+    position: relative;
+    z-index: 1;
+
+    .detail {
+      position: absolute;
+      top: 220px;
+      right: 140px;
+      z-index: 2;
+      color: white;
+      .name {
+        text-transform: uppercase;
+      }
+      .price {
+        text-transform: uppercase;
+        color: white;
+        text-decoration: none;
+        transition: all 0.3s;
+        &:hover {
+          color: aqua;
+          i {
+            transition: all 0.3s;
+            transform: translateX(10px);
+          }
+          &:not(:hover) {
+            i {
+              transition: all 0.3s;
+            }
+          }
+        }
+      }
+    }
     .swiper {
-      position: relative;
       background-color: rgb(43, 40, 40);
 
       .swiper-slide {
@@ -32,7 +62,7 @@
         }
         &.swiper-slide-next {
           width: 500px !important;
-          clip-path: polygon(0% 0%, 57% 0%, 100% 100%, 42% 100%);
+          clip-path: polygon(0% 0%, 57% 0%, 100% 100%, 43% 100%);
           margin-right: -215px !important;
         }
 
