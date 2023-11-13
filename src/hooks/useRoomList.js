@@ -4,22 +4,27 @@ import { LoadingContext } from "../contexts/loading/LoadingContext";
 
 export const useRoomList = () => {
   const [roomList, setRoomList] = useState([]);
-  // const [_, setLoadingState] = useContext(LoadingContext);
+  const [_, setLoadingState] = useContext(LoadingContext);
 
   useEffect(() => {
-    getRoomList();
+    if (roomList.length === 0) {
+      getRoomList();
+    }
   }, []);
   const getRoomList = async () => {
-    // setLoadingState({ isLoading: true });
+    setLoadingState({ isLoading: true });
     try {
       const result = await fetchRoomListApi();
+
       setRoomList(result.data);
     } catch (error) {
       alert("error");
+    } finally {
+      setTimeout(() => {
+        setLoadingState({ isLoading: false });
+      }, 0);
     }
   };
-  // setTimeout(() => {
-  //   setLoadingState({ isLoading: false });
-  // }, 900);
+
   return roomList;
 };

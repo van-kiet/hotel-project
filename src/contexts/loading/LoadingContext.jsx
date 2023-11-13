@@ -3,7 +3,7 @@ import { createContext, useEffect, useState } from "react";
 import "./style.scss";
 
 const DEFAULT_STATE = {
-  isLoading: true,
+  isLoading: false,
 };
 
 const LoadingContext = createContext(DEFAULT_STATE);

@@ -10,11 +10,7 @@ SwiperCore.use([Navigation, Pagination]);
 
 export default function Room() {
   const roomList = useRoomList();
-  const [activeCardId, setActiveCardId] = useState(null);
-  console.log(roomList);
-  useEffect(() => {
-    setActiveCardId("1");
-  }, []);
+  const [activeCardId, setActiveCardId] = useState("1");
 
   const handleSlideChange = (swiper) => {
     const activeSlide = swiper.slides[swiper.activeIndex];
